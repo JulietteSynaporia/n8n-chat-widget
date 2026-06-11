@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat</title>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <style>
+    html, body, #n8n-chat {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="n8n-chat"></div>
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'https://juliettelaposte.app.n8n.cloud/webhook/7811a8ee-45f2-48e0-a56f-01894142def1/chat',
+      target: '#n8n-chat',
+      mode: 'fullscreen',
+      showWelcomeScreen: false,
+      defaultLanguage: 'fr',
+      i18n: {
+        fr: {
+          title: 'Assistant',
+          subtitle: '',
+          inputPlaceholder: 'Écris ta question...',
+          getStarted: 'Démarrer',
+          footer: ''
+        }
+      }
+    });
+  </script>
+</body>
+</html>
